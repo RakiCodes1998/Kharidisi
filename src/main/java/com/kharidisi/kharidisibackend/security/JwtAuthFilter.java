@@ -29,9 +29,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain) throws ServletException, IOException {
 
 
-        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-            response.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(request, response);
+        if (request.getMethod().equalsIgnoreCase("OPTIONS")){
+            FilterChain.doFilter(request,response);
+
             return;
         }
 
