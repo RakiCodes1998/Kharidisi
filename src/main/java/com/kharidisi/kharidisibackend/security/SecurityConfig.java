@@ -72,36 +72,5 @@ public class SecurityConfig {
 
 
 
-    public CorsConfigurationSource corsConfigurationSource() {
 
-        CorsConfiguration configuration = new CorsConfiguration();
-
-        // Your deployed frontend
-        configuration.setAllowedOrigins(List.of(
-                "https://kharidishomepage-production-c2f3.up.railway.app"
-        ));
-
-        // HTTP methods allowed from frontend
-        configuration.setAllowedMethods(List.of(
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "PATCH",
-                "OPTIONS"
-        ));
-
-        // Allow all request headers
-        configuration.setAllowedHeaders(List.of("*"));
-
-        // Allow cookies/authorization credentials
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
-
-        source.registerCorsConfiguration("/**", configuration);
-
-        return source;
-    }
 }
