@@ -35,7 +35,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
 
                 // Enable CORS with our configuration
-                .cors(cors -> {})
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
 
                 // JWT authentication -> no HTTP session
                 .sessionManagement(session ->
